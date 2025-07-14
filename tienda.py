@@ -1,10 +1,8 @@
 class Producto:
     def __init__(self, codigo, nombre, precio):
-        """
-        COMPLETAR 1:
-        Asigna los parámetros a los atributos
-        """
-        pass
+        self.codigo = codigo
+        self.nombre = nombre
+        self.precio = precio
 
     def __str__(self):
         """
