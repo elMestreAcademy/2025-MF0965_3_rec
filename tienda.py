@@ -14,15 +14,12 @@ def buscar_producto(inventario, codigo_buscar):
             return producto
 
 def mostrar_inventario(inventario):
-    """
-    COMPLETAR 4:
-    Imprime por pantalla todos los productos que hay en 'inventario'.
-    """
     print("\n--- INVENTARIO ACTUAL ---")
     if not inventario:
         print("El inventario está vacío.")
     else:
-        pass
+        for producto in inventario:
+            print(producto)
 
 
 def calcular_valor_total(inventario):
