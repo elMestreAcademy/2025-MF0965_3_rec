@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+
 class ItemInventario(ABC):
     def __init__(self, codigo, nombre, precio):
         self.codigo = codigo
@@ -25,29 +26,29 @@ class ItemInventario(ABC):
             raise ValueError("El nombre no puede estar vacío.")
         self.nombre = nombre
 
+
 class ProductoFisico(ItemInventario):
     def detalles(self):
         return f"Producto Físico - {self.nombre}: {self.precio:.2f} €"
 
+
 class ProductoDigital(ItemInventario):
     def detalles(self):
         return f"Producto Digital - {self.nombre}: {self.precio:.2f} €"
+
 
 class Promocionable(ABC):
     @abstractmethod
     def aplicar_descuento(self, porcentaje):
         pass
 
+
 class ProductoEspecial(ProductoFisico, Promocionable):
     def aplicar_descuento(self, porcentaje):
         if not (0 <= porcentaje <= 100):
             raise ValueError("El porcentaje debe estar entre 0 y 100.")
         self.set_precio(self.get_precio() * (1 - porcentaje / 100))
-class ProductoEspecial(ProductoFisico, Promocionable):
-    def aplicar_descuento(self, porcentaje):
-        if not (0 <= porcentaje <= 100):
-            raise ValueError("El porcentaje debe estar entre 0 y 100.")
-        self.set_precio(self.get_precio() * (1 - porcentaje / 100))
+
 
 class Producto:
     def __init__(self, codigo, nombre, precio):
@@ -60,9 +61,10 @@ class Producto:
 
 
 def buscar_producto(inventario, codigo_buscar):
-   for producto in inventario:
+    for producto in inventario:
         if producto.codigo == codigo_buscar:
             return producto
+
 
 def mostrar_inventario(inventario):
     print("\n--- INVENTARIO ACTUAL ---")
@@ -81,9 +83,15 @@ def calcular_valor_total(inventario):
 
 
 def main():
+    producto_especial = ProductoEspecial("PROD004", "Altavoces Bluetooth", 150.00)
+    producto_especial.set_precio(120.00)
+    producto_especial.set_nombre("Altavoces Bluetooth Mejorados")
+    producto_especial.aplicar_descuento(10)
+
     inventario = [
         Producto("PROD001", "Teclado Mecánico", 75.50),
-        Producto("PROD002", "Mouse Inalámbrico", 25.00)
+        Producto("PROD002", "Mouse Inalámbrico", 25.00),
+        producto_especial
     ]
 
     while True:
