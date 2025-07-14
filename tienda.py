@@ -81,9 +81,15 @@ def calcular_valor_total(inventario):
 
 
 def main():
+    producto_especial = ProductoEspecial("PROD004", "Altavoces Bluetooth", 150.00)
+    producto_especial.set_precio(120.00)
+    producto_especial.set_nombre("Altavoces Bluetooth Mejorados")
+    producto_especial.aplicar_descuento(10)
+
     inventario = [
         Producto("PROD001", "Teclado Mecánico", 75.50),
-        Producto("PROD002", "Mouse Inalámbrico", 25.00)
+        Producto("PROD002", "Mouse Inalámbrico", 25.00),
+        producto_especial
     ]
 
     while True:
