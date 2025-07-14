@@ -1,11 +1,31 @@
 from abc import ABC, abstractmethod
 
-class ItemInventario(ABC):
+"""
+Ejercicio:4 punto 6
+Mas allá del deber: no se pide punto 6, pero ItemInventario es un `Producto`,
+así qué para que tenga "atributos comunes", nada mejor que
+heredar de `Producto`, que ya esta definida.
+
+Esto conseguirá también que todos los productos hereden esos atributos ccomunes
+así como arreglará el print, que hasta el momento era:
+<__main__.ProductoEspecial object at 0x000...>`
+
+Con esto tambien queda muy claro, que todas pertenecen a `Producto` y
+lo idóneo seria empaquetarlas en un módulo
+"""
+
+
+class Producto:
     def __init__(self, codigo, nombre, precio):
         self.codigo = codigo
         self.nombre = nombre
         self.precio = precio
 
+    def __str__(self):
+        return f"[{self.codigo}] {self.nombre} - Precio: {self.precio:.2f} €"
+
+
+class ItemInventario(ABC, Producto):
     @abstractmethod
     def detalles(self):
         pass
@@ -48,16 +68,6 @@ class ProductoEspecial(ProductoFisico, Promocionable):
         if not (0 <= porcentaje <= 100):
             raise ValueError("El porcentaje debe estar entre 0 y 100.")
         self.set_precio(self.get_precio() * (1 - porcentaje / 100))
-
-
-class Producto:
-    def __init__(self, codigo, nombre, precio):
-        self.codigo = codigo
-        self.nombre = nombre
-        self.precio = precio
-
-    def __str__(self):
-        return f"[{self.codigo}] {self.nombre} - Precio: {self.precio:.2f} €"
 
 
 def buscar_producto(inventario, codigo_buscar):
