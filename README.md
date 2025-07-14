@@ -11,21 +11,21 @@
 1. ¿Qué principio busca maximizar la reutilización en el desarrollo de componentes?
 
     - a) Acoplamiento fuerte
-    - b) Cohesión
+    - **b) Cohesión**
     - c) Inversión de control
     - d) Reutilización de código
 
 2. En un modelo de comunicaciones síncronas entre componentes, ¿qué ocurre?
 
     - a) Emisor y receptor interactúan de forma independiente en el tiempo
-    - b) El emisor bloquea su ejecución hasta recibir respuesta
+    - **b) El emisor bloquea su ejecución hasta recibir respuesta**
     - c) Se usan únicamente colas de mensajes
     - d) No hay garantía de orden en la entrega
 
 3. En el despliegue de un componente, ¿qué fichero describe normalmente sus dependencias y configuración?
 
     - a) `README.md`
-    - b) `deployment.xml` (o `manifest.xml`)
+    - **b) `deployment.xml` (o `manifest.xml`)**
     - c) `build.gradle`
     - d) `.gitignore`
 
@@ -33,7 +33,7 @@
 
     - a) Configuración de parámetros de entorno
     - b) Creación de script de despliegue
-    - c) Diseño de interfaces UML
+    - **c) Diseño de interfaces UML**
     - d) Verificación de versiones
 
 5. Señala la ventaja principal de los componentes orientados a servicios REST:
@@ -41,11 +41,11 @@
     - a) Estado mantenido en servidor
     - b) Acoplamiento fuerte
     - c) Uso de XML obligatoriamente
-    - d) Ligereza y uso de HTTP nativo
+    - **d) Ligereza y uso de HTTP nativo**
 
 6. Para controlar la calidad de un componente antes de su instalación, se realiza:
 
-    - a) Pruebas unitarias y de integración
+    - **a) Pruebas unitarias y de integración**
     - b) Documentación de usuario
     - c) Manual de despliegue
     - d) Creación de diagrama de despliegue
@@ -53,7 +53,7 @@
 7. Un “container” (contenedor) en tecnologías de componentes proporciona, entre otras, la siguiente funcionalidad:
 
     - a) Compilar código fuente
-    - b) Gestión de transacciones y seguridad
+    - **b) Gestión de transacciones y seguridad**
     - c) Control de versiones Git
     - d) Monitoreo de procesos del SO
 
@@ -61,19 +61,19 @@
 
     - a) `json`
     - b) `logging`
-    - c) `requests`
+    - **c) `requests`**
     - d) `threading`
 
 9. ¿Qué módulo de Python se utiliza para definir clases abstractas y métodos abstractos?
 
-    - a) `typing`
+    - **a) `typing`**
     - b) `abc`
     - c) `interface`
     - d) `abstract`
 
 10. ¿Cuál es el propósito del decorador `@property` en Python?
 
-    - a) Definir un método estático
+    - **a) Definir un método estático**
     - b) Crear getters y setters de forma implícita
     - c) Decorar funciones asíncronas
     - d) Documentar el código
