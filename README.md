@@ -88,6 +88,56 @@ Describe brecemente (máximo 3 lineas) cada uno de los principios **SOLID** y po
 - Segregación de Interfaces
 - Inversión de Dependencias
 
+---
+
+### **1. Responsabilidad Única (SRP)**
+
+Una clase debe tener una única razón para cambiar, es decir, una única responsabilidad.
+
+---
+
+### **2. Abierto/Cerrado (OCP)**
+
+Las clases deben estar abiertas para extensión pero cerradas para modificación.
+---
+
+### **3. Sustitución de Liskov (LSP)**
+
+Las subclases deben poder sustituir a sus clases padre sin alterar el comportamiento esperado.
+
+```python
+class Ave:
+    def volar(self): print("Volando")
+
+class Golondrina(Ave):
+    def volar(self): print("Golondrina vuela")
+
+# Uso válido:
+ave: Ave = Golondrina()
+ave.volar()
+```
+
+---
+
+### **4. Segregación de Interfaces (ISP)**
+
+Una clase no debe verse forzada a implementar interfaces que no usa.
+
+---
+
+### **5. Inversión de Dependencias (DIP)**
+
+Los módulos de alto nivel no deben depender de módulos de bajo nivel, ambos deben depender de abstracciones.
+
+```python
+class BaseDatos:
+    def guardar(self, datos): pass
+
+class Servicio:
+    def __init__(self, almacenamiento: BaseDatos):
+        self.almacenamiento = almacenamiento
+```
+
 ## Parte III: Ejercicios prácticos de programación
 
 Repositorio: Antes de comenzar, forkea el repositorio original disponible en: https://github.com/elMestreAcademy/2025-MF0965_3_rec
