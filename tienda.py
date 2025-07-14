@@ -1,3 +1,13 @@
+from abc import ABC, abstractmethod
+class ItemInventario(ABC):
+    def __init__(self, codigo, nombre, precio):
+        self.codigo = codigo
+        self.nombre = nombre
+        self.precio = precio
+
+    @abstractmethod
+    def detalles(self):
+        pass
 class Producto:
     def __init__(self, codigo, nombre, precio):
         self.codigo = codigo
