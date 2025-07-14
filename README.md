@@ -66,10 +66,10 @@
 
 9. ¿Qué módulo de Python se utiliza para definir clases abstractas y métodos abstractos?
 
-    - **a) `typing`**
+    - a) `typing`
     - b) `abc`
     - c) `interface`
-    - d) `abstract`
+    - **d) `abstract`**
 
 10. ¿Cuál es el propósito del decorador `@property` en Python?
 
