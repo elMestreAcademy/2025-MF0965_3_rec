@@ -50,12 +50,10 @@ def main():
         elif opcion == '2':
             codigo_buscar = input("Ingrese el código del producto a buscar: ")
             producto_encontrado = buscar_producto(inventario, codigo_buscar)
-            """
-            COMPLETAR 6:
-            Comprueba si 'producto_encontrado' es distinto de None.
-            Si se encontró, imprime ">> Producto encontrado:" y luego el producto.
-                     Si no, imprime ">> No se encontró ningún producto con ese código."
-            """
+            if producto_encontrado:
+                print(f"\n>> Producto encontrado: {producto_encontrado}")
+            else:
+                print(">> No se encontró ningún producto con ese código.")
 
         elif opcion == '3':
             valor_total = calcular_valor_total(inventario)
