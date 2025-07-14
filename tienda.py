@@ -33,6 +33,22 @@ class ProductoDigital(ItemInventario):
     def detalles(self):
         return f"Producto Digital - {self.nombre}: {self.precio:.2f} €"
 
+class Promocionable(ABC):
+    @abstractmethod
+    def aplicar_descuento(self, porcentaje):
+        pass
+
+class ProductoEspecial(ProductoFisico, Promocionable):
+    def aplicar_descuento(self, porcentaje):
+        if not (0 <= porcentaje <= 100):
+            raise ValueError("El porcentaje debe estar entre 0 y 100.")
+        self.set_precio(self.get_precio() * (1 - porcentaje / 100))
+class ProductoEspecial(ProductoFisico, Promocionable):
+    def aplicar_descuento(self, porcentaje):
+        if not (0 <= porcentaje <= 100):
+            raise ValueError("El porcentaje debe estar entre 0 y 100.")
+        self.set_precio(self.get_precio() * (1 - porcentaje / 100))
+
 class Producto:
     def __init__(self, codigo, nombre, precio):
         self.codigo = codigo
