@@ -23,12 +23,9 @@ def mostrar_inventario(inventario):
 
 
 def calcular_valor_total(inventario):
-    """
-    COMPLETAR 5:
-    Calcula y devuelve la suma de los precios de todos los productos en el inventario.
-    """
     total = 0.0
-
+    for producto in inventario:
+        total += producto.precio
     return total
 
 
