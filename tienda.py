@@ -1,68 +1,22 @@
-from abc import ABC, abstractmethod
-class ItemInventario(ABC):
-    def __init__(self, codigo, nombre, precio):
-        self.codigo = codigo
-        self.nombre = nombre
-        self.precio = precio
+"""
+Ejercicio:4 punto 7
+Se separa `Producto` en su propio módulo
+No se pedia, pero hubiera sido lo ideal antes de empezar con clases abstractas
+"""
+from producto import *
 
-    @abstractmethod
+
+class ProductoMetafisico(Producto):
     def detalles(self):
-        pass
+        return f"Producto Meta-Físico - {self.nombre}: {self.precio:.2f} €"
 
-    def get_precio(self):
-        return self.precio
-
-    def set_precio(self, precio):
-        if precio < 0:
-            raise ValueError("El precio no puede ser negativo.")
-        self.precio = precio
-
-    def get_nombre(self):
-        return self.nombre
-
-    def set_nombre(self, nombre):
-        if not nombre:
-            raise ValueError("El nombre no puede estar vacío.")
-        self.nombre = nombre
-
-class ProductoFisico(ItemInventario):
-    def detalles(self):
-        return f"Producto Físico - {self.nombre}: {self.precio:.2f} €"
-
-class ProductoDigital(ItemInventario):
-    def detalles(self):
-        return f"Producto Digital - {self.nombre}: {self.precio:.2f} €"
-
-class Promocionable(ABC):
-    @abstractmethod
-    def aplicar_descuento(self, porcentaje):
-        pass
-
-class ProductoEspecial(ProductoFisico, Promocionable):
-    def aplicar_descuento(self, porcentaje):
-        if not (0 <= porcentaje <= 100):
-            raise ValueError("El porcentaje debe estar entre 0 y 100.")
-        self.set_precio(self.get_precio() * (1 - porcentaje / 100))
-class ProductoEspecial(ProductoFisico, Promocionable):
-    def aplicar_descuento(self, porcentaje):
-        if not (0 <= porcentaje <= 100):
-            raise ValueError("El porcentaje debe estar entre 0 y 100.")
-        self.set_precio(self.get_precio() * (1 - porcentaje / 100))
-
-class Producto:
-    def __init__(self, codigo, nombre, precio):
-        self.codigo = codigo
-        self.nombre = nombre
-        self.precio = precio
-
-    def __str__(self):
-        return f"[{self.codigo}] {self.nombre} - Precio: {self.precio:.2f} €"
 
 
 def buscar_producto(inventario, codigo_buscar):
-   for producto in inventario:
+    for producto in inventario:
         if producto.codigo == codigo_buscar:
             return producto
+
 
 def mostrar_inventario(inventario):
     print("\n--- INVENTARIO ACTUAL ---")
