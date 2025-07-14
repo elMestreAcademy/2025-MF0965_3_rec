@@ -9,13 +9,9 @@ class Producto:
 
 
 def buscar_producto(inventario, codigo_buscar):
-    """
-    COMPLETAR 3:
-    Busca en 'inventario' un producto cuyo código coincida con 'codigo_buscar'.
-    Si lo encuentra, devuelve dicho objeto; si no, devuelve None.
-    """
-    pass
-
+   for producto in inventario:
+        if producto.codigo == codigo_buscar:
+            return producto
 
 def mostrar_inventario(inventario):
     """
