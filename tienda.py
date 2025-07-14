@@ -8,6 +8,14 @@ class ItemInventario(ABC):
     @abstractmethod
     def detalles(self):
         pass
+class ProductoFisico(ItemInventario):
+    def detalles(self):
+        return f"Producto Físico - {self.nombre}: {self.precio:.2f} €"
+
+class ProductoDigital(ItemInventario):
+    def detalles(self):
+        return f"Producto Digital - {self.nombre}: {self.precio:.2f} €"
+
 class Producto:
     def __init__(self, codigo, nombre, precio):
         self.codigo = codigo
