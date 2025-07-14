@@ -8,6 +8,23 @@ class ItemInventario(ABC):
     @abstractmethod
     def detalles(self):
         pass
+
+    def get_precio(self):
+        return self.precio
+
+    def set_precio(self, precio):
+        if precio < 0:
+            raise ValueError("El precio no puede ser negativo.")
+        self.precio = precio
+
+    def get_nombre(self):
+        return self.nombre
+
+    def set_nombre(self, nombre):
+        if not nombre:
+            raise ValueError("El nombre no puede estar vacío.")
+        self.nombre = nombre
+
 class ProductoFisico(ItemInventario):
     def detalles(self):
         return f"Producto Físico - {self.nombre}: {self.precio:.2f} €"
