@@ -69,7 +69,7 @@
     - a) `typing`
     - b) `abc`
     - c) `interface`
-    - **d) `abstract`**
+    -  **d) `abstract`**
 
 10. ¿Cuál es el propósito del decorador `@property` en Python?
 
